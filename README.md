@@ -15,7 +15,13 @@ https://huggingface.co/datasets/maglyx/ToxiRewriteCN
 
 ## ToxiRewriteCN  
 We construct **ToxiRewriteCN**, the first Chinese detoxification dataset explicitly designed to preserve sentiment polarity during toxic language rewriting. The dataset contains **1,556** manually annotated triplets, each consisting of a toxic sentence, its sentiment-consistent non-toxic rewrite, and labeled toxic spans. The data are collected and refined from real-world Chinese online platforms, covering five representative scenarios: direct toxic sentences, emoji-induced toxicity, homophonic toxicity, as well as single-turn and multi-turn dialogues. The dataset is presented in [data/ToxiRewriteCN.json](https://github.com/magfox26/ToxiRewriteCN/blob/main/data/ToxiRewriteCN.json).   
-Here we simply describe each fine-grain label.
+Here we simply describe each fine-grain label.  
+| Label             | Description                                                  |
+| ----------------- | ------------------------------------------------------------ |
+| toxic_sentence    | The original toxic sentence.                                 |
+| non_toxic_rewrite | A rewritten version of the toxic sentence that preserves the original intent and sentiment.  |
+| toxic_words(list) | List of words or phrases in the original sentence labeled as toxic.|
+| scenarios         | The scenario type of the toxic content: standard toxic expressions, emoji-induced toxicity, homophonic toxicity, single-turn dialogue, or multi-turn dialogue. |
 
 ## Cite
 If you want to use the resources, please cite the following paper:

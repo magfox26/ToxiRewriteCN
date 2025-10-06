@@ -1,1 +1,34 @@
 # ToxiRewriteCN
+
+**Caution:**  
+This dataset contains examples of violent or offensive language that may be disturbing to some readers.  
+
+---
+
+**Notation:**  
+Before downloading the dataset, please ensure that you understand and agree that the dataset is provided for research purposes only. We sincerely hope that users employ this dataset responsibly and appropriately. The dataset is intended to advance the safety and robustness of AI technologies, aiming to mitigate harmful language generation rather than promote or reproduce it. Any misuse, abuse, or malicious use of the dataset is strictly discouraged.  
+
+---
+
+**Paper:**  
+[Chinese Toxic Language Mitigation via Sentiment Polarity Consistent Rewrites](https://arxiv.org/abs/2505.15297)
+
+---
+
+**GitHub Repository:**  
+https://github.com/magfox26/ToxiRewriteCN  
+
+---
+
+**Citation:**  
+
+```bibtex
+@misc{wang2025chinesetoxiclanguagemitigation,
+      title={Chinese Toxic Language Mitigation via Sentiment Polarity Consistent Rewrites}, 
+      author={Xintong Wang and Yixiao Liu and Jingheng Pan and Liang Ding and Longyue Wang and Chris Biemann},
+      year={2025},
+      eprint={2505.15297},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2505.15297}, 
+}

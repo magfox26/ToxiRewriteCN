@@ -11,7 +11,10 @@ The paper has been accepted in EMNLP 2025 (main conferenc).
 [Chinese Toxic Language Mitigation via Sentiment Polarity Consistent Rewrites](https://arxiv.org/abs/2505.15297)
 
 ## Huggingface
-https://huggingface.co/datasets/maglyx/ToxiRewriteCN
+https://huggingface.co/datasets/maglyx/ToxiRewriteCN  
+
+## ToxiRewriteCN  
+We construct **ToxiRewriteCN**, the first Chinese detoxification dataset explicitly designed to preserve sentiment polarity during toxic language rewriting. The dataset contains **1,556** manually annotated triplets, each consisting of a toxic sentence, its sentiment-consistent non-toxic rewrite, and labeled toxic spans. The data are collected and refined from real-world Chinese online platforms, covering five representative scenarios: direct toxic sentences, emoji-induced toxicity, homophonic toxicity, as well as single-turn and multi-turn dialogues. 
 
 ## Cite
 If you want to use the resources, please cite the following paper:

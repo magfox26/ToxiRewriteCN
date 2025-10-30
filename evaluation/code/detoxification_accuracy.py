@@ -2,7 +2,7 @@ import os
 import json
 import pandas as pd
 
-INPUT_FILE = "/ltstorage/home/liu/prompt_test/evaluation/分类结果/closed-source_results/deepseek-v3_cls.json"
+INPUT_FILE = "/home/ToxiRewriteCN/classifiers/finetuning_llama3-8b_eval_detoxification_results/llama3-8b_test_cls.json"
 TOXIC_WORDS_PATH = "/home/ToxiRewriteCN/evaluation/data/Toxic_words.json"
 OUTPUT_DIR = "/home/ToxiRewriteCN/evaluation/results/"
 

@@ -21,7 +21,7 @@ swift sft \
     --save_total_limit 5 \
     --logging_steps 5 \
     --max_length 2048 \
-    --output_dir /home/ToxiRewriteCN/classifiers/output/detoxification_accuracy_full_data/ \
+    --output_dir /home/ToxiRewriteCN/classifiers/output/detoxification_full_data/ \
     --warmup_ratio 0.05 \
     --lora_dropout 0.05 \
     --deepspeed zero3 \

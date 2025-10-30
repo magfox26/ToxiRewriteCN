@@ -22,8 +22,6 @@ Here we simply describe each fine-grain label.
 ## 1. Toxicity & Sentiment Classifiers     
 ### Environment Setup  
 ```bash
-cd classifiers
-
 # Create and activate a new conda environment
 conda create -n classifier_env python=3.9
 conda activate classifier_env
@@ -74,8 +72,6 @@ CUDA_VISIBLE_DEVICES=0 python llama3_gen.py
 ## 3. Evaluation 
 ### Environment Setup  
 ```bash
-cd evaluation
-
 # Create and activate a new conda environment
 conda create -n eval_env python=3.9
 conda activate eval_env

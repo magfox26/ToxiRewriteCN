@@ -95,7 +95,7 @@ python sentiment_polarity.py
 ```
 
 ## Cite
-If you find our project useful, we hope you can kindly cite::
+If you find our project useful, we hope you can kindly cite:
 ~~~
 @misc{wang2025chinesetoxiclanguagemitigation,
       title={Chinese Toxic Language Mitigation via Sentiment Polarity Consistent Rewrites}, 

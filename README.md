@@ -39,7 +39,7 @@ bash lora_qwen3-32b_detox.sh
 # Step 2: Merge LoRA adapters with base model weights
 bash merge_detox.sh
 
-# Step 3: Generate toxicity classification results (LLaMA3-8B as example)
+# Step 3: Generate toxicity classification results 
 CUDA_VISIBLE_DEVICES=0,1,2,3 \
 python eval_detox.py --folder /home/ToxiRewriteCN/finetuning_llama3-8b/eval  
 ```
@@ -51,7 +51,7 @@ bash lora_qwen3-32b_style.sh
 # Step 2: Merge LoRA adapters with base model weights
 bash merge_style.sh
 
-# Step 3: Generate style classification results (LLaMA3-8B as example)
+# Step 3: Generate style classification results
 CUDA_VISIBLE_DEVICES=4,5,6,7 \
 python eval_style.py --folder /home/ToxiRewriteCN/finetuning_llama3-8b/eval
 ```

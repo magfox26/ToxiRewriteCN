@@ -29,7 +29,7 @@ conda activate cls-env
 # Install required dependencies
 pip install -r requirements.txt
 ```
-#### 1.Toxicity Classifier    
+#### Toxicity Classifier    
 ```bash
 # Step 1: LoRA fine-tuning for toxicity classification (based on Qwen3-32B)
 bash lora_qwen3-32b_detox.sh
@@ -39,9 +39,9 @@ bash merge_detox.sh
 
 # Step 3: Generate toxicity classification results (LLaMA3-8B as example)
 CUDA_VISIBLE_DEVICES=0,1,2,3 \
-python eval_detox.py --folder /home/ToxiRewriteCN/finetuning_llama3-8b/eval
+python eval_detox.py --folder /home/ToxiRewriteCN/finetuning_llama3-8b/eval  
 ```
-#### 2.Style Classifier   
+#### Style Classifier   
 ```bash
 # Step 1: LoRA fine-tuning for style classification (based on Qwen3-32B)
 bash lora_qwen3-32b_style.sh
@@ -53,6 +53,7 @@ bash merge_style.sh
 CUDA_VISIBLE_DEVICES=4,5,6,7 \
 python eval_style.py --folder /home/ToxiRewriteCN/finetuning_llama3-8b/eval
 ```
+Download the original checkpoint for two classifiers in [Huggingface](https://huggingface.co/maglyx/ToxiRewriteCN/tree/main)
 
 ### LLaMA3-8B Fine-tuning
 

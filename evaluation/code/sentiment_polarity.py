@@ -3,7 +3,7 @@ import json
 import pandas as pd
 
 INPUT_FILE = "/ltstorage/home/liu/prompt_test/evaluation/分类结果/closed-source_style_results/deepseek-v3_cls.json"
-OUTPUT_DIR = "/ltstorage/home/liu/emnlp2025/evaluation/results/"
+OUTPUT_DIR = "/home/ToxiRewriteCN/evaluation/results/"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 

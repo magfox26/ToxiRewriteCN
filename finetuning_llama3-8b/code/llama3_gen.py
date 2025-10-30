@@ -54,6 +54,6 @@ if __name__ == "__main__":
 
     # Initialize the vLLM engine
     llm = LLM(model=model_path, gpu_memory_utilization=0.8, tensor_parallel_size=1)
-    OUTPUT_FILE = "eval/llama3/test.json"
+    OUTPUT_FILE = "/finetuning_llama3-8b/eval/llama3-8b_test.json"
     Path(os.path.dirname(OUTPUT_FILE)).mkdir(parents=True, exist_ok=True)
     generate()

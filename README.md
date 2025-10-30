@@ -23,8 +23,8 @@ Here we simply describe each fine-grain label.
 ### Environment Setup  
 ```bash
 # Create and activate a new conda environment
-conda create -n cls-env python=3.9
-conda activate cls-env
+conda create -n classifier_env python=3.9
+conda activate classifier_env
 
 # Install required dependencies
 pip install -r requirements.txt

@@ -8,9 +8,9 @@ import sacrebleu
 from bert_score import score
 from comet import download_model, load_from_checkpoint
 
-INPUT_FILE = "/ltstorage/home/liu/emnlp2025/finetuning_llama3-8b/eval/llama3-8b_test.json"
-STANDARD_FILE = "/ltstorage/home/liu/prompt_test/evaluation/standard.json"
-OUTPUT_DIR = "/ltstorage/home/liu/emnlp2025/evaluation/results/"  
+INPUT_FILE = "/home/ToxiRewriteCN/finetuning_llama3-8b/eval/llama3-8b_test.json"
+STANDARD_FILE = "/home/ToxiRewriteCN/evaluation/data/standard.json"
+OUTPUT_DIR = "/home/ToxiRewriteCN/evaluation/results/"  
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 

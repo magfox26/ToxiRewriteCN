@@ -22,6 +22,8 @@ Here we simply describe each fine-grain label.
 ## 1. Toxicity & Sentiment Classifiers     
 ### Environment Setup  
 ```bash
+cd classifiers
+
 # Create and activate a new conda environment
 conda create -n classifier_env python=3.9
 conda activate classifier_env
@@ -55,10 +57,11 @@ python eval_style.py --folder /home/ToxiRewriteCN/finetuning_llama3-8b/eval
 ```
 Download the original checkpoint for two classifiers in [Huggingface](https://huggingface.co/maglyx/ToxiRewriteCN/tree/main)
 
-### LLaMA3-8B Fine-tuning
+## 2. LLaMA3-8B Fine-tuning  
 
 
-### Evaluation 
+
+## 3. Evaluation 
 
 
 

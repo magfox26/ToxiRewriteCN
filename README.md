@@ -3,7 +3,7 @@
 ## ❗️ Notation
 This dataset contains examples of violent or offensive language that may be disturbing to some readers. Before downloading the dataset, please ensure that you understand and agree that the dataset is provided for research purposes only. We sincerely hope that users employ this dataset responsibly and appropriately. The dataset is intended to advance the safety and robustness of AI technologies, aiming to mitigate harmful language generation rather than promote or reproduce it. Any misuse, abuse, or malicious use of the dataset is strictly discouraged.  
 
-## Paper
+## 📄 Paper
 The paper has been accepted in EMNLP 2025 (main conference).   
 [Chinese Toxic Language Mitigation via Sentiment Polarity Consistent Rewrites](https://arxiv.org/abs/2505.15297)
 

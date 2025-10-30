@@ -5,8 +5,8 @@ import numpy as np
 from tqdm import tqdm
 from sentence_transformers import SentenceTransformer
 
-INPUT_FILE = "/ltstorage/home/liu/emnlp2025/finetuning_llama3-8b/eval/llama3-8b_test.json"
-OUTPUT_DIR = "/ltstorage/home/liu/emnlp2025/evaluation/results/"
+INPUT_FILE = "/home/ToxiRewriteCN/finetuning_llama3-8b/eval/llama3-8b_test.json"
+OUTPUT_DIR = "/home/ToxiRewriteCN/evaluation/results/"
 
 # Calculate cosine similarity between two vectors
 def cosine_similarity(v1, v2):

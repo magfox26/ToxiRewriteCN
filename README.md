@@ -60,7 +60,7 @@ Download the original checkpoint for two classifiers in [Huggingface](https://hu
 ## 2. LLaMA3-8B Fine-tuning  
 ### Environment Setup  
 ```bash
-cd finetuning_llama3-8b
+conda activate classifier_env
 ```
 ### Finetune Model 
 ```bash 

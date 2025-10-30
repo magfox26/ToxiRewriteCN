@@ -41,7 +41,7 @@ bash merge_detox.sh
 CUDA_VISIBLE_DEVICES=0,1,2,3 \
 python eval_detox.py --folder /home/ToxiRewriteCN/finetuning_llama3-8b/eval  
 ```
-### Style Classifier   
+### Sentiment Classifier   
 ```bash
 # Step 1: LoRA fine-tuning for style classification (based on Qwen3-32B)
 bash lora_qwen3-32b_style.sh

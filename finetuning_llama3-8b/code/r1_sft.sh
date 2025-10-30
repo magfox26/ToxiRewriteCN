@@ -18,7 +18,6 @@ swift sft \
 --max_length 32768 \
 --weight_decay 1e-4 \
 --deepspeed zero3 \
---dataloader_num_workers 4 \
 --output_dir /home/ToxiRewriteCN/finetuning_llama3-8b/output/llama3_8b_r1 \
 --report_to wandb \
 --dataloader_num_workers 4 $@ 2>&1 | tee llama3_8b_r1.log

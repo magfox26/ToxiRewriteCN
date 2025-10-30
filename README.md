@@ -62,16 +62,14 @@ Download the original checkpoint for two classifiers in [Huggingface](https://hu
 ```bash
 cd finetuning_llama3-8b
 ```
-### Finetune   
-```bash
-# 
+### Finetune Model 
+```bash 
+# Fine-tune LLaMA3-8B with Deepseek-R1's reasoning traces as supervision 
 bash r1_sft.sh
 
-# 
-CUDA_VISIBLE_DEVICES=0 \
-python llama3_gen.py
+# Generate detoxification outputs via fine-tuned LLaMA3-8B
+CUDA_VISIBLE_DEVICES=0 python llama3_gen.py
 ```
-
 
 ## 3. Evaluation 
 ### Environment Setup  
@@ -85,6 +83,8 @@ conda activate eval_env
 # Install required dependencies
 pip install -r requirements.txt
 ```
+
+
 
 
 

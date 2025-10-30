@@ -21,7 +21,7 @@ swift sft \
     --save_total_limit 5 \
     --logging_steps 5 \
     --max_length 2048 \
-    --output_dir /home/ToxiRewriteCN/classifiers/output/sentiment_polarity_ratio121/ \
+    --output_dir /home/ToxiRewriteCN/classifiers/output/style_ratio121/ \
     --warmup_ratio 0.05 \
     --lora_dropout 0.05 \
     --deepspeed zero3 \

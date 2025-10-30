@@ -17,10 +17,10 @@ Here we simply describe each fine-grain label.
 | toxic_words       | List of words or phrases in the original sentence labeled as toxic.|
 | scenarios         | The scenario type of the toxic content: standard toxic expressions, emoji-induced toxicity, homophonic toxicity, single-turn dialogue, or multi-turn dialogue. |
 
-## Quick start 
+## 💻 Quick start 
 
-### Toxicity & Sentiment Classifiers     
-#### Environment Setup  
+## Toxicity & Sentiment Classifiers     
+### Environment Setup  
 ```bash
 # Create and activate a new conda environment
 conda create -n cls-env python=3.9
@@ -29,7 +29,7 @@ conda activate cls-env
 # Install required dependencies
 pip install -r requirements.txt
 ```
-#### Toxicity Classifier    
+### Toxicity Classifier    
 ```bash
 # Step 1: LoRA fine-tuning for toxicity classification (based on Qwen3-32B)
 bash lora_qwen3-32b_detox.sh
@@ -41,7 +41,7 @@ bash merge_detox.sh
 CUDA_VISIBLE_DEVICES=0,1,2,3 \
 python eval_detox.py --folder /home/ToxiRewriteCN/finetuning_llama3-8b/eval  
 ```
-#### Style Classifier   
+### Style Classifier   
 ```bash
 # Step 1: LoRA fine-tuning for style classification (based on Qwen3-32B)
 bash lora_qwen3-32b_style.sh

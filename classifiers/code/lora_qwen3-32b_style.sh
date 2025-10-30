@@ -26,4 +26,4 @@ swift sft \
     --lora_dropout 0.05 \
     --deepspeed zero3 \
     --report_to wandb \
-    --dataloader_num_workers 4 $@ 2>&1 | tee sentiment_polarity_ratio121.log
+    --dataloader_num_workers 4 $@ 2>&1 | tee style_ratio121.log

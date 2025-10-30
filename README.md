@@ -58,16 +58,39 @@ python eval_style.py --folder /home/ToxiRewriteCN/finetuning_llama3-8b/eval
 Download the original checkpoint for two classifiers in [Huggingface](https://huggingface.co/maglyx/ToxiRewriteCN/tree/main)
 
 ## 2. LLaMA3-8B Fine-tuning  
+### Environment Setup  
+```bash
+cd finetuning_llama3-8b
+```
+### Finetune   
+```bash
+# 
+bash r1_sft.sh
 
+# 
+CUDA_VISIBLE_DEVICES=0 \
+python llama3_gen.py
+```
 
 
 ## 3. Evaluation 
+### Environment Setup  
+```bash
+cd evaluation
+
+# Create and activate a new conda environment
+conda create -n eval_env python=3.9
+conda activate eval_env
+
+# Install required dependencies
+pip install -r requirements.txt
+```
 
 
 
 
 ## Cite
-If you want to use the resources, please cite the following paper:
+If you find our project useful, we hope you can kindly cite::
 ~~~
 @misc{wang2025chinesetoxiclanguagemitigation,
       title={Chinese Toxic Language Mitigation via Sentiment Polarity Consistent Rewrites}, 

@@ -83,6 +83,7 @@ conda activate eval_env
 # Install required dependencies
 pip install -r requirements.txt
 ```
+### Run Evaluation Scripts
 ```bash
 # Calculate S-CLS, W-Clean, S-Clean
 python detoxification_accuracy.py

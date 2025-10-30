@@ -14,7 +14,7 @@ Here we simply describe each fine-grain label.
 | ----------------- | ------------------------------------------------------------ |
 | toxic             | The original toxic sentence.                                 |
 | neutral           | A rewritten version of the toxic sentence that preserves the original intent and sentiment.  |
-| toxic_words (list) | List of words or phrases in the original sentence labeled as toxic.|
+| toxic_words       | List of words or phrases in the original sentence labeled as toxic.|
 | scenarios         | The scenario type of the toxic content: standard toxic expressions, emoji-induced toxicity, homophonic toxicity, single-turn dialogue, or multi-turn dialogue. |
 
 ## Sentiment & Toxicity Classifiers 

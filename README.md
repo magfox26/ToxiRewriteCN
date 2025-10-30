@@ -19,8 +19,8 @@ Here we simply describe each fine-grain label.
 
 ## 💻 Quick start 
 
-## Toxicity & Sentiment Classifiers     
-### Environment Setup  
+### Toxicity & Sentiment Classifiers     
+#### Environment Setup  
 ```bash
 # Create and activate a new conda environment
 conda create -n classifier_env python=3.9
@@ -29,7 +29,7 @@ conda activate classifier_env
 # Install required dependencies
 pip install -r requirements.txt
 ```
-### Toxicity Classifier    
+#### Toxicity Classifier    
 ```bash
 # Step 1: LoRA fine-tuning for toxicity classification (based on Qwen3-32B)
 bash lora_qwen3-32b_detox.sh
@@ -41,7 +41,7 @@ bash merge_detox.sh
 CUDA_VISIBLE_DEVICES=0,1,2,3 \
 python eval_detox.py --folder /home/ToxiRewriteCN/finetuning_llama3-8b/eval  
 ```
-### Style Classifier   
+#### Style Classifier   
 ```bash
 # Step 1: LoRA fine-tuning for style classification (based on Qwen3-32B)
 bash lora_qwen3-32b_style.sh

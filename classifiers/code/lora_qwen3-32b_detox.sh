@@ -3,9 +3,9 @@
 NPROC_PER_NODE=4 \
 CUDA_VISIBLE_DEVICES=1,2,3,4 \
 swift sft \
-    --model Qwen/Qwen3-32B \
+    --model /home/models/Qwen/Qwen3-32B \
     --train_type lora \
-    --dataset ./data/train_full_8148.json \
+    --dataset /home/ToxiRewriteCN/classifiers/data/train_full_8148.json \
     --torch_dtype bfloat16 \
     --num_train_epochs 3 \
     --per_device_train_batch_size 4 \
@@ -21,7 +21,7 @@ swift sft \
     --save_total_limit 5 \
     --logging_steps 5 \
     --max_length 2048 \
-    --output_dir lora_weights_full_data/ \
+    --output_dir /home/ToxiRewriteCN/classifiers/lora_weights_full_data/ \
     --warmup_ratio 0.05 \
     --lora_dropout 0.05 \
     --deepspeed zero3 \

@@ -86,7 +86,7 @@ if __name__ == "__main__":
 
     # Initialize the vLLM engine
     llm = LLM(
-        model="/home/ToxiRewriteCN/classifiers/output/detoxification_accuracy_full_data_merged",
+        model="/home/ToxiRewriteCN/classifiers/output/qwen3-32b-tox-classifier",
         max_model_len=4096,
         gpu_memory_utilization=0.80,
         tensor_parallel_size=4

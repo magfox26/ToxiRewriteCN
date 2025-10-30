@@ -3,7 +3,7 @@
 NPROC_PER_NODE=4 \
 CUDA_VISIBLE_DEVICES=1,2,3,4 \
 swift sft \
-    --model /home/models/Qwen/Qwen3-32B \
+    --model /home/ToxiRewriteCN/models/Qwen3-32B \
     --train_type lora \
     --dataset /home/ToxiRewriteCN/classifiers/data/train_pol_ratio121.json \
     --torch_dtype bfloat16 \
@@ -21,9 +21,9 @@ swift sft \
     --save_total_limit 5 \
     --logging_steps 5 \
     --max_length 2048 \
-    --output_dir /home/ToxiRewriteCN/classifiers/lora_weights_style_polarity_ratio121/ \
+    --output_dir /home/ToxiRewriteCN/classifiers/output/sentiment_polarity_ratio121/ \
     --warmup_ratio 0.05 \
     --lora_dropout 0.05 \
     --deepspeed zero3 \
     --report_to wandb \
-    --dataloader_num_workers 4 $@ 2>&1 | tee lora_weights_style_polarity_ratio121.log
+    --dataloader_num_workers 4 $@ 2>&1 | tee sentiment_polarity_ratio121.log

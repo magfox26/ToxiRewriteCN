@@ -84,7 +84,7 @@ if __name__ == "__main__":
     )
 
     open_source = Path(f"./{folder}")
-    output_path = Path(f"/home/ToxiRewriteCN/classifiers/{folder}_polarity_results")
+    output_path = Path(f"/home/ToxiRewriteCN/classifiers/{folder}_style_results")
     output_path.mkdir(parents=True, exist_ok=True)
     for file in open_source.rglob("*.json"):
         data = json.load(open(file, "r", encoding="utf-8"))

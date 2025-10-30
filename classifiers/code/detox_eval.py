@@ -77,7 +77,7 @@ if __name__ == "__main__":
     tokenizer = AutoTokenizer.from_pretrained("/home/ToxiRewriteCN/models/Qwen3-32B")
 
     # Configurae the sampling parameters (for thinking mode)
-    sampling_params = SamplingParams (
+    sampling_params = SamplingParams(
         temperature=0,
         top_p=0.9,
         top_k=20,

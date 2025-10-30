@@ -5,8 +5,8 @@ from transformers import AutoTokenizer
 from vllm import LLM, SamplingParams
 from tqdm import tqdm
 
-DATA_FILE = "finetuning_llama3-8b/data/test_556.json"
-PROMPT_DIR = "finetuning_llama3-8b/prompt"
+DATA_FILE = "/home/ToxiRewriteCN/finetuning_llama3-8b/data/test_556.json"
+PROMPT_DIR = "/home/ToxiRewriteCN/finetuning_llama3-8b/prompt"
 
 USER_TEMPLATE = "输入：{sentence}"
 
@@ -44,7 +44,7 @@ def generate():
 
 
 if __name__ == "__main__":
-    model_path = "/finetuning_llama3-8b/output/llama3_8b_r1"
+    model_path = "/home/ToxiRewriteCN/finetuning_llama3-8b/output/llama3_8b_r1"
 
     # Initialize the tokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_path)

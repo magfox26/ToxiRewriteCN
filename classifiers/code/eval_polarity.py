@@ -77,7 +77,7 @@ if __name__ == "__main__":
 
     # Initialize the vLLM engine
     llm = LLM(
-        model="/home/ToxiRewriteCN/classifiers/output/merged_sentiment_polarity_ratio121",
+        model="/home/ToxiRewriteCN/classifiers/output/qwen3-32b-style-polarity",
         max_model_len=4096,
         gpu_memory_utilization=0.80,
         tensor_parallel_size=4

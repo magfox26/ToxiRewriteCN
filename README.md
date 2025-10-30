@@ -83,11 +83,19 @@ conda activate eval_env
 # Install required dependencies
 pip install -r requirements.txt
 ```
+```bash
+# Calculate S-CLS, W-Clean, S-Clean
+python detoxification_accuracy.py
 
+# Compute content preservation score
+python content_preservation.py
 
+# Calculate BLEU, ChrF++, BERTScore-F1 and COMET
+python fluency.py
 
-
-
+# Assess sentiment polarity score
+python sentiment_polarity.py
+```
 
 ## Cite
 If you find our project useful, we hope you can kindly cite::

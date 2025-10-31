@@ -21,9 +21,9 @@ swift sft \
     --save_total_limit 5 \
     --logging_steps 5 \
     --max_length 2048 \
-    --output_dir /home/ToxiRewriteCN/classifiers/output/style_ratio121/ \
+    --output_dir /home/ToxiRewriteCN/classifiers/output/pol_ratio121/ \
     --warmup_ratio 0.05 \
     --lora_dropout 0.05 \
     --deepspeed zero3 \
     --report_to wandb \
-    --dataloader_num_workers 4 $@ 2>&1 | tee style_ratio121.log
+    --dataloader_num_workers 4 $@ 2>&1 | tee pol_ratio121.log

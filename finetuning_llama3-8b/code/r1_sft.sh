@@ -8,7 +8,7 @@ swift sft \
 --model meta-llama/Llama-3.1-8B-Instruct \
 --model_type llama3_1 \
 --train_type full \
---dataset "$PROJECT_ROOT/finetuning_llama3-8b/data/r1_train.json" \
+--dataset "$PROJECT_ROOT/finetuning_llama3-8b/data/r1_train.json" \  
 --num_train_epochs 5 \
 --per_device_train_batch_size 2 \
 --per_device_eval_batch_size 2 \
@@ -22,6 +22,6 @@ swift sft \
 --max_length 32768 \
 --weight_decay 1e-4 \
 --deepspeed zero3 \
---output_dir "$PROJECT_ROOT/finetuning_llama3-8b/output/llama3_8b_r1" \
+--output_dir "$PROJECT_ROOT/finetuning_llama3-8b/output/llama3_8b_r1" \  # Replace with path to save trained model
 --report_to wandb \
 --dataloader_num_workers 4 $@ 2>&1 | tee "$PROJECT_ROOT/finetuning_llama3-8b/output/llama3_8b_r1/llama3_8b_r1.log"

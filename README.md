@@ -27,11 +27,11 @@ conda activate toxirewritecn
 # Install required dependencies
 pip install -r requirements.txt
 ```
-The project leverages MS-Swift framework for the fine-tuning process.  
 ## Path Configuration
-The project supports automatic path adaptation: Core dependency [utils/path_utils.py](https://github.com/magfox26/ToxiRewriteCN/blob/main/utils/path_utils.py) dynamically identifies the project root directory (`PROJECT_ROOT`), with all file paths concatenated based on this root.
+The project supports automatic path adaptation: Core dependency [utils/path_utils.py](https://github.com/magfox26/ToxiRewriteCN/blob/main/utils/path_utils.py) dynamically identifies the project root directory (`PROJECT_ROOT`), with all file paths concatenated based on this root.  
 Customizable paths (e.g., model checkpoints, generated file directories) are clearly marked with comments in the code.
-## 1. Toxicity & Sentiment Polarity Classifiers     
+## 1. Toxicity & Sentiment Polarity Classifiers    
+The project leverages MS-Swift framework for the fine-tuning process.  
 ### Toxicity Classifier    
 ```bash
 # Step 1: LoRA fine-tuning for toxicity classification (based on Qwen3-32B)

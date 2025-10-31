@@ -19,7 +19,6 @@ print("Loading COMET model...")
 model_path = download_model("Unbabel/wmt22-comet-da")
 comet_model = load_from_checkpoint(model_path)
 
-# Load standard answers
 print("Loading standard answers...")
 with open(STANDARD_FILE, 'r', encoding='utf-8') as f:
     standard_data = json.load(f)
@@ -64,7 +63,6 @@ def evaluate_single_file():
         try:
             data = json.loads(content)
         except json.JSONDecodeError:
-            # Try to fix common JSON issues
             content = content.strip().rstrip(',').rstrip(';')
             if content.startswith('[') and not content.endswith(']'):
                 content += ']'

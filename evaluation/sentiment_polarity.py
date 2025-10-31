@@ -1,9 +1,12 @@
 import os
 import json
 import pandas as pd
+from utils.path_utils import get_project_root
 
-INPUT_FILE = "/home/ToxiRewriteCN/classifiers/finetuning_llama3-8b_eval_style_results/llama3-8b_test_cls.json"
-OUTPUT_DIR = "/home/ToxiRewriteCN/evaluation/results/"
+PROJECT_ROOT = get_project_root()
+
+INPUT_FILE = PROJECT_ROOT / "classifiers" / "finetuning_llama3-8b_eval_style_results" / "llama3-8b_test_cls.json"  # Replace with path to style-classified file
+OUTPUT_DIR = PROJECT_ROOT / "evaluation" / "results/"  # Replace with path to save style evaluation results
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 

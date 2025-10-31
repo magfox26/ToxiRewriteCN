@@ -27,8 +27,8 @@ conda activate toxirewritecn
 # Install required dependencies
 pip install -r requirements.txt
 ```
-The project leverages the Swift framework for the fine-tuning process.
-## 1. Toxicity & Sentiment Classifiers     
+The project leverages MS-Swift framework for the fine-tuning process.
+## 1. Toxicity & Sentiment Polairty Classifiers     
 ### Toxicity Classifier    
 ```bash
 # Step 1: LoRA fine-tuning for toxicity classification (based on Qwen3-32B)
@@ -41,7 +41,7 @@ bash merge_tox.sh
 CUDA_VISIBLE_DEVICES=0,1,2,3 \
 python eval_tox.py --folder /home/ToxiRewriteCN/finetuning_llama3-8b/eval  
 ```
-### Sentiment Classifier   
+### Sentiment Polairty Classifier   
 ```bash
 # Step 1: LoRA fine-tuning for style classification (based on Qwen3-32B)
 bash train_pol.sh

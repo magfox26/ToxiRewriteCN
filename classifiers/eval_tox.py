@@ -76,7 +76,7 @@ if __name__ == "__main__":
     # Initialize the tokenizer
     tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen3-32B")
 
-    # Configurae the sampling parameters (for thinking mode)
+    # Configure the sampling parameters (for thinking mode)
     sampling_params = SamplingParams(
         temperature=0,
         top_p=0.9,

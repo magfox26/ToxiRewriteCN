@@ -21,7 +21,7 @@ model = SentenceTransformer("shibing624/text2vec-base-chinese-paraphrase")
 print("Model loaded successfully!")
 
 def process_file():
-    model_name = os.path.basename(INPUT_FILE).replace('_cls.json', '')  # 去掉_cls后缀，保持模型名统一
+    model_name = os.path.basename(INPUT_FILE).replace('_cls.json', '')  
 
     with open(INPUT_FILE, 'r', encoding='utf-8') as f:
         data = json.load(f)

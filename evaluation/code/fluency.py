@@ -9,7 +9,7 @@ from bert_score import score
 from comet import download_model, load_from_checkpoint
 
 INPUT_FILE = "/home/ToxiRewriteCN/finetuning_llama3-8b/eval/llama3-8b_test.json"
-STANDARD_FILE = "/home/ToxiRewriteCN/evaluation/data/standard.json"
+STANDARD_FILE = "/home/ToxiRewriteCN/data/ToxiRewriteCN.json"
 OUTPUT_DIR = "/home/ToxiRewriteCN/evaluation/results/"  
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)

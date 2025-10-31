@@ -4,9 +4,12 @@ from pathlib import Path
 from transformers import AutoTokenizer
 from vllm import LLM, SamplingParams
 from tqdm import tqdm
+from utils.path_utils import get_project_root
 
-DATA_FILE = "/home/ToxiRewriteCN/finetuning_llama3-8b/data/test_556.json"
-PROMPT_DIR = "/home/ToxiRewriteCN/finetuning_llama3-8b/prompt"
+PROJECT_ROOT = get_project_root()
+
+DATA_FILE = PROJECT_ROOT / "finetuning_llama3-8b" / "data" / "test_556.json"
+PROMPT_DIR = PROJECT_ROOT / "finetuning_llama3-8b" / "prompt"
 
 USER_TEMPLATE = "输入：{sentence}"
 
@@ -44,7 +47,7 @@ def generate():
 
 
 if __name__ == "__main__":
-    model_path = "/home/ToxiRewriteCN/finetuning_llama3-8b/output/llama3_8b_r1"
+    model_path = PROJECT_ROOT / "finetuning_llama3-8b" / "output" / "llama3_8b_r1"
 
     # Initialize the tokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_path)
@@ -54,6 +57,6 @@ if __name__ == "__main__":
 
     # Initialize the vLLM engine
     llm = LLM(model=model_path, gpu_memory_utilization=0.8, tensor_parallel_size=1)
-    OUTPUT_FILE = "/finetuning_llama3-8b/eval/llama3-8b_test.json"
+    OUTPUT_FILE = PROJECT_ROOT / "finetuning_llama3-8b" / "eval" / "llama3-8b_test.json"
     Path(os.path.dirname(OUTPUT_FILE)).mkdir(parents=True, exist_ok=True)
     generate()

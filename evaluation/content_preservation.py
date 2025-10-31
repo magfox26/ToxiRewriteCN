@@ -4,9 +4,12 @@ import pandas as pd
 import numpy as np
 from tqdm import tqdm
 from sentence_transformers import SentenceTransformer
+from utils.path_utils import get_project_root
 
-INPUT_FILE = "/home/ToxiRewriteCN/finetuning_llama3-8b/eval/llama3-8b_test.json"
-OUTPUT_DIR = "/home/ToxiRewriteCN/evaluation/results/"
+PROJECT_ROOT = get_project_root()
+
+INPUT_FILE = PROJECT_ROOT / "finetuning_llama3-8b" / "eval" / "llama3-8b_test.json"  # Replace with path to the file to be evaluated
+OUTPUT_DIR = PROJECT_ROOT / "evaluation" / "results/"  # Replace with path to save evaluation results
 
 # Calculate cosine similarity between two vectors
 def cosine_similarity(v1, v2):
@@ -46,7 +49,7 @@ def process_file():
         'Content Preservation (×100)': similarities
     })
 
-    avg_similarity = round(np.mean(similarities), 2) if similarities else 0.0
+    avg_similarity = round(np.mean(np.mean(similarities), 2) if similarities else 0.0
 
     avg_row = pd.DataFrame({
         'Toxic': ['Average Content Preservation'],

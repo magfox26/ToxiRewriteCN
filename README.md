@@ -81,7 +81,7 @@ python sentiment_polarity.py
 
 ## Cite
 If you find our project useful, we hope you can kindly cite:
-~~~
+```
 @misc{wang2025chinesetoxiclanguagemitigation,
       title={Chinese Toxic Language Mitigation via Sentiment Polarity Consistent Rewrites}, 
       author={Xintong Wang and Yixiao Liu and Jingheng Pan and Liang Ding and Longyue Wang and Chris Biemann},
@@ -91,4 +91,4 @@ If you find our project useful, we hope you can kindly cite:
       primaryClass={cs.CL},
       url={https://arxiv.org/abs/2505.15297}, 
 }
-~~~
+```

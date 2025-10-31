@@ -5,7 +5,7 @@ CUDA_VISIBLE_DEVICES=1,2,3,4 \
 swift sft \
     --model Qwen/Qwen3-32B \
     --train_type lora \
-    --dataset /home/ToxiRewriteCN/data/train_pol_ratio121.json \
+    --dataset /home/ToxiRewriteCN/data/train_polarity_ratio121.json \
     --torch_dtype bfloat16 \
     --num_train_epochs 5 \
     --per_device_train_batch_size 4 \

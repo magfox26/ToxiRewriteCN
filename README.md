@@ -17,7 +17,7 @@ Here we simply describe each fine-grain label.
 | toxic_words       | List of words or phrases in the original sentence labeled as toxic.|
 | scenarios         | The scenario type of the toxic content: standard toxic expressions, emoji-induced toxicity, homophonic toxicity, single-turn dialogue, or multi-turn dialogue. |
 
-## 💻 Quick start 
+## 💻 Quick start   
 ## Environment Setup  
 ```bash
 # Create and activate a new conda environment
@@ -27,7 +27,10 @@ conda activate toxirewritecn
 # Install required dependencies
 pip install -r requirements.txt
 ```
-The project leverages MS-Swift framework for the fine-tuning process.
+The project leverages MS-Swift framework for the fine-tuning process.  
+## Path Configuration
+The project supports automatic path adaptation: Core dependency [utils/path_utils.py](https://github.com/magfox26/ToxiRewriteCN/blob/main/utils/path_utils.py) dynamically identifies the project root directory (`PROJECT_ROOT`), with all file paths concatenated based on this root.
+Customizable paths (e.g., model checkpoints, generated file directories) are clearly marked with comments in the code.
 ## 1. Toxicity & Sentiment Polarity Classifiers     
 ### Toxicity Classifier    
 ```bash
@@ -38,8 +41,7 @@ bash train_tox.sh
 bash merge_tox.sh
 
 # Step 3: Generate toxicity classification results 
-CUDA_VISIBLE_DEVICES=0,1,2,3 \
-python eval_tox.py --folder /home/ToxiRewriteCN/finetuning_llama3-8b/eval  
+CUDA_VISIBLE_DEVICES=0,1,2,3 python eval_tox.py 
 ```
 ### Sentiment Polarity Classifier   
 ```bash
@@ -50,8 +52,7 @@ bash train_pol.sh
 bash merge_pol.sh
 
 # Step 3: Generate style classification results
-CUDA_VISIBLE_DEVICES=4,5,6,7 \
-python eval_pol.py --folder /home/ToxiRewriteCN/finetuning_llama3-8b/eval
+CUDA_VISIBLE_DEVICES=4,5,6,7 python eval_pol.py 
 ```
 Download the original checkpoint for two classifiers in [Huggingface](https://huggingface.co/maglyx/ToxiRewriteCN/tree/main)
 

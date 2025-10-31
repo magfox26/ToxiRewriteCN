@@ -4,6 +4,9 @@ import json
 from tqdm import tqdm
 from pathlib import Path
 import argparse
+from utils.path_utils import get_project_root
+
+PROJECT_ROOT = get_project_root()
 
 system_prompt = """你是一名文本情感与毒性分析专家。阅读用户给出的文本，然后判断它属于下面三类中的哪一类。
 请只输出类别编号，不要解释，也不要输出其它内容。
@@ -23,7 +26,7 @@ def flush(prompts, meta):
     preds   = [o.outputs[0].text.strip() for o in outputs]
 
     for (idx, k), p in zip(meta, preds):
-        data[idx]["style_cls"] =p
+        data[idx]["style_cls"] = p
 
 def process_one_file():
     prompts   = []
@@ -48,20 +51,16 @@ def process_one_file():
 
     flush(prompts, meta)
 
-
     json.dump(data, open(output_path / (file.stem+"_cls.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=4)
     print("Classification completed and saved to", output_path / (file.stem+"_cls.json"))
 
 if __name__ == "__main__":
-
     parser = argparse.ArgumentParser()
-
     parser.add_argument(
         '--folder',
         type=str,
         default=""
     )
-    
     args = parser.parse_args()
     folder = args.folder
 
@@ -77,14 +76,14 @@ if __name__ == "__main__":
 
     # Initialize the vLLM engine
     llm = LLM(
-        model="/home/ToxiRewriteCN/classifiers/output/qwen3-32b-style-polarity",
+        model=PROJECT_ROOT / "classifiers" / "output" / "qwen3-32b-style-polarity",  # Replace with path to your trained style classification model
         max_model_len=4096,
         gpu_memory_utilization=0.80,
         tensor_parallel_size=4
     )
 
-    open_source = Path(f"./{folder}")
-    output_path = Path(f"/home/ToxiRewriteCN/classifiers/{folder}_style_results")
+    open_source = PROJECT_ROOT / folder  # Replace with path to input folder
+    output_path = PROJECT_ROOT / "classifiers" / f"{folder}_style_results"  # Replace with path to save style classification results
     output_path.mkdir(parents=True, exist_ok=True)
     for file in open_source.rglob("*.json"):
         data = json.load(open(file, "r", encoding="utf-8"))

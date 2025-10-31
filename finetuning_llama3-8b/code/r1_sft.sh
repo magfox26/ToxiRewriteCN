@@ -1,7 +1,7 @@
 NPROC_PER_NODE=4 \
 CUDA_VISIBLE_DEVICES=0,1,2,3 \
 swift sft \
---model meta-llama/Llama-3.1-8B-Instruct \ 
+--model meta-llama/Llama-3.1-8B-Instruct \
 --model_type llama3_1 \
 --train_type full \
 --dataset /home/ToxiRewriteCN/finetuning_llama3-8b/data/r1_train.json \

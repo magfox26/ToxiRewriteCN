@@ -18,49 +18,44 @@ Here we simply describe each fine-grain label.
 | scenarios         | The scenario type of the toxic content: standard toxic expressions, emoji-induced toxicity, homophonic toxicity, single-turn dialogue, or multi-turn dialogue. |
 
 ## 💻 Quick start 
-
-## 1. Toxicity & Sentiment Classifiers     
-### Environment Setup  
+## Environment Setup  
 ```bash
 # Create and activate a new conda environment
-conda create -n classifier_env python=3.9
-conda activate classifier_env
+conda create -n toxirewritecn python=3.9
+conda activate toxirewritecn
 
 # Install required dependencies
 pip install -r requirements.txt
 ```
+The project leverages the Swift framework for the fine-tuning process.
+## 1. Toxicity & Sentiment Classifiers     
 ### Toxicity Classifier    
 ```bash
 # Step 1: LoRA fine-tuning for toxicity classification (based on Qwen3-32B)
-bash lora_qwen3-32b_detox.sh
+bash train_tox.sh
 
 # Step 2: Merge LoRA adapters with base model weights
-bash merge_detox.sh
+bash merge_tox.sh
 
 # Step 3: Generate toxicity classification results 
 CUDA_VISIBLE_DEVICES=0,1,2,3 \
-python eval_detox.py --folder /home/ToxiRewriteCN/finetuning_llama3-8b/eval  
+python eval_tox.py --folder /home/ToxiRewriteCN/finetuning_llama3-8b/eval  
 ```
 ### Sentiment Classifier   
 ```bash
 # Step 1: LoRA fine-tuning for style classification (based on Qwen3-32B)
-bash lora_qwen3-32b_style.sh
+bash train_pol.sh
 
 # Step 2: Merge LoRA adapters with base model weights
-bash merge_style.sh
+bash merge_pol.sh
 
 # Step 3: Generate style classification results
 CUDA_VISIBLE_DEVICES=4,5,6,7 \
-python eval_style.py --folder /home/ToxiRewriteCN/finetuning_llama3-8b/eval
+python eval_pol.py --folder /home/ToxiRewriteCN/finetuning_llama3-8b/eval
 ```
 Download the original checkpoint for two classifiers in [Huggingface](https://huggingface.co/maglyx/ToxiRewriteCN/tree/main)
 
 ## 2. LLaMA3-8B Fine-tuning  
-### Environment Setup  
-```bash
-conda activate classifier_env
-```
-### Finetune Model 
 ```bash 
 # Fine-tune LLaMA3-8B with Deepseek-R1's reasoning traces as supervision 
 bash r1_sft.sh
@@ -70,16 +65,6 @@ CUDA_VISIBLE_DEVICES=0 python llama3_gen.py
 ```
 
 ## 3. Evaluation 
-### Environment Setup  
-```bash
-# Create and activate a new conda environment
-conda create -n eval_env python=3.9
-conda activate eval_env
-
-# Install required dependencies
-pip install -r requirements.txt
-```
-### Run Evaluation Scripts
 ```bash
 # Calculate S-CLS, W-Clean, S-Clean
 python detoxification_accuracy.py

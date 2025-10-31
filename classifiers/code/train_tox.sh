@@ -3,9 +3,9 @@
 NPROC_PER_NODE=4 \
 CUDA_VISIBLE_DEVICES=1,2,3,4 \
 swift sft \
-    --model /home/ToxiRewriteCN/models/Qwen3-32B \
+    --model Qwen/Qwen3-32B \
     --train_type lora \
-    --dataset /home/ToxiRewriteCN/classifiers/data/train_full_8148.json \
+    --dataset /home/ToxiRewriteCN/data/train_full_8148.json \
     --torch_dtype bfloat16 \
     --num_train_epochs 3 \
     --per_device_train_batch_size 4 \

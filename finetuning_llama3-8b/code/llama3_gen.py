@@ -36,7 +36,7 @@ def generate():
         formatted_prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
         outputs = llm.generate([formatted_prompt], sampling_params, use_tqdm=False)
         response = outputs[0].outputs[0].text
-        item["output"] = response
+        item["rewritten"] = response
         # print(response)
     
     json.dump(data, open(OUTPUT_FILE, 'w', encoding='utf-8'), ensure_ascii=False, indent=4)

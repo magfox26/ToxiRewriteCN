@@ -3,7 +3,7 @@ import json
 import pandas as pd
 
 INPUT_FILE = "/home/ToxiRewriteCN/classifiers/finetuning_llama3-8b_eval_detoxification_results/llama3-8b_test_cls.json"
-TOXIC_WORDS_PATH = "/home/ToxiRewriteCN/evaluation/data/Toxic_words.json"
+TOXIC_WORDS_PATH = "/home/ToxiRewriteCN/data/ToxiRewriteCN.json"
 OUTPUT_DIR = "/home/ToxiRewriteCN/evaluation/results/"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)

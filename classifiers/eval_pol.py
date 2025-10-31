@@ -59,14 +59,13 @@ if __name__ == "__main__":
     parser.add_argument(
         '--folder',
         type=str,
-        default=""
+        default="finetuning_llama3-8b/eval"
     )
     args = parser.parse_args()
     folder = args.folder
 
     tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen3-32B")
 
-    # Configure the sampling parameters (for thinking mode)
     sampling_params = SamplingParams(
         temperature=0,
         top_p=0.9,
@@ -74,7 +73,6 @@ if __name__ == "__main__":
         max_tokens=128
     )
 
-    # Initialize the vLLM engine
     llm = LLM(
         model=PROJECT_ROOT / "classifiers" / "output" / "qwen3-32b-style-polarity",  # Replace with path to your trained style classification model
         max_model_len=4096,
@@ -82,8 +80,8 @@ if __name__ == "__main__":
         tensor_parallel_size=4
     )
 
-    open_source = PROJECT_ROOT / folder  # Replace with path to input folder
-    output_path = PROJECT_ROOT / "classifiers" / f"{folder}_style_results"  # Replace with path to save style classification results
+    open_source = PROJECT_ROOT / folder  
+    output_path = PROJECT_ROOT / "classifiers" / f"{folder}_style_results"  # Path to save style classification results
     output_path.mkdir(parents=True, exist_ok=True)
     for file in open_source.rglob("*.json"):
         data = json.load(open(file, "r", encoding="utf-8"))

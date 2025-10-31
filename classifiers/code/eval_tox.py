@@ -74,7 +74,7 @@ if __name__ == "__main__":
     folder = args.folder
 
     # Initialize the tokenizer
-    tokenizer = AutoTokenizer.from_pretrained("/home/ToxiRewriteCN/models/Qwen3-32B")
+    tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen3-32B")
 
     # Configurae the sampling parameters (for thinking mode)
     sampling_params = SamplingParams(

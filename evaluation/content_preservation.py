@@ -8,7 +8,7 @@ from utils.path_utils import get_project_root
 
 PROJECT_ROOT = get_project_root()
 
-INPUT_FILE = PROJECT_ROOT / "finetuning_llama3-8b" / "eval" / "llama3-8b_test.json"  # Replace with path to the file to be evaluated
+INPUT_FILE = PROJECT_ROOT / "classifiers" / "finetuning_llama3-8b_eval_detoxification_results" / "llama3-8b_test_cls.json"  # Replace with path to the classified file
 OUTPUT_DIR = PROJECT_ROOT / "evaluation" / "results/"  # Replace with path to save evaluation results
 
 # Calculate cosine similarity between two vectors
@@ -21,7 +21,7 @@ model = SentenceTransformer("shibing624/text2vec-base-chinese-paraphrase")
 print("Model loaded successfully!")
 
 def process_file():
-    model_name = os.path.basename(INPUT_FILE).replace('.json', '')
+    model_name = os.path.basename(INPUT_FILE).replace('_cls.json', '')  # 去掉_cls后缀，保持模型名统一
 
     with open(INPUT_FILE, 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -49,7 +49,7 @@ def process_file():
         'Content Preservation (×100)': similarities
     })
 
-    avg_similarity = round(np.mean(np.mean(similarities), 2) if similarities else 0.0
+    avg_similarity = round(np.mean(similarities), 2) if similarities else 0.0
 
     avg_row = pd.DataFrame({
         'Toxic': ['Average Content Preservation'],

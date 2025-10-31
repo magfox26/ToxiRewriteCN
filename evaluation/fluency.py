@@ -60,10 +60,12 @@ def evaluate_single_file():
     print(f"Evaluating file: {file_name}")
 
     with open(INPUT_FILE, 'r', encoding='utf-8') as f:
+        content = f.read()
         try:
-            data = json.load(f)
+            data = json.loads(content)
         except json.JSONDecodeError:
-            content = f.read().strip().rstrip(',').rstrip(';')
+            # Try to fix common JSON issues
+            content = content.strip().rstrip(',').rstrip(';')
             if content.startswith('[') and not content.endswith(']'):
                 content += ']'
             data = json.loads(content)

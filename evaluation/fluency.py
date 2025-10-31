@@ -7,10 +7,13 @@ from tqdm import tqdm
 import sacrebleu
 from bert_score import score
 from comet import download_model, load_from_checkpoint
+from utils.path_utils import get_project_root
 
-INPUT_FILE = "/home/ToxiRewriteCN/finetuning_llama3-8b/eval/llama3-8b_test.json"
-STANDARD_FILE = "/home/ToxiRewriteCN/data/ToxiRewriteCN.json"
-OUTPUT_DIR = "/home/ToxiRewriteCN/evaluation/results/"  
+PROJECT_ROOT = get_project_root()
+
+INPUT_FILE = PROJECT_ROOT / "finetuning_llama3-8b" / "eval" / "llama3-8b_test.json"  # Replace with path to the generated file for evaluation
+STANDARD_FILE = PROJECT_ROOT / "data" / "ToxiRewriteCN.json"  
+OUTPUT_DIR = PROJECT_ROOT / "evaluation" / "results/"  # Replace with path to save fluency evaluation results
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 

@@ -83,13 +83,12 @@ python sentiment_polarity.py
 ## Cite
 If you find our project useful, we hope you can kindly cite:
 ```
-@misc{wang2025chinesetoxiclanguagemitigation,
-      title={Chinese Toxic Language Mitigation via Sentiment Polarity Consistent Rewrites}, 
-      author={Xintong Wang and Yixiao Liu and Jingheng Pan and Liang Ding and Longyue Wang and Chris Biemann},
-      year={2025},
-      eprint={2505.15297},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2505.15297}, 
-}
+@inproceedings{wang-etal-2025-chinese,
+    title = "{C}hinese Toxic Language Mitigation via Sentiment Polarity Consistent Rewrites",
+    author = "Wang, Xintong and Liu, Yixiao and Pan, Jingheng and Ding, Liang and Wang, Longyue and Biemann, Chris",
+    booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+    year = "2025",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.emnlp-main.1808/",
+    pages = "35683--35699"
 ```

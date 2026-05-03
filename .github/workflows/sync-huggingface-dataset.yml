@@ -42,5 +42,11 @@ jobs:
       - name: Install Hugging Face Hub client
         run: python -m pip install "huggingface_hub>=0.23.0"
 
+      - name: Check Hugging Face token
+        if: env.HF_TOKEN == ''
+        run: |
+          echo "::notice::HF_TOKEN is not set. Add a Hugging Face write token as a repository secret to enable automatic dataset sync."
+
       - name: Upload dataset to Hugging Face
+        if: env.HF_TOKEN != ''
         run: python scripts/upload_to_huggingface.py --repo-id "$HF_DATASET_REPO_ID"

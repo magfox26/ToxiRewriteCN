@@ -8,7 +8,7 @@ The paper has been accepted in EMNLP 2025 (main conference).
 [Chinese Toxic Language Mitigation via Sentiment Polarity Consistent Rewrites](https://aclanthology.org/2025.emnlp-main.1808/)
 
 ## ToxiRewriteCN Dataset 
-We construct **ToxiRewriteCN**, the first Chinese detoxification dataset explicitly designed to preserve sentiment polarity during toxic language rewriting. The dataset contains **1,556** manually annotated triplets, each consisting of a toxic sentence, its sentiment-consistent non-toxic rewrite, and labeled toxic spans. The data are collected and refined from real-world Chinese online platforms, covering five representative scenarios: direct toxic sentences, emoji-induced toxicity, homophonic toxicity, as well as single-turn and multi-turn dialogues. The dataset is presented in [data/ToxiRewriteCN.json](https://github.com/magfox26/ToxiRewriteCN/blob/main/data/ToxiRewriteCN.json).   
+We construct **ToxiRewriteCN**, the first Chinese detoxification dataset explicitly designed to preserve sentiment polarity during toxic language rewriting. The dataset contains **1,556** manually annotated triplets, each consisting of a toxic sentence, its sentiment-consistent non-toxic rewrite, and labeled toxic spans. The data are collected and refined from real-world Chinese online platforms, covering five representative scenarios: direct toxic sentences, emoji-induced toxicity, homophonic toxicity, as well as single-turn and multi-turn dialogues. The dataset is presented in [data/ToxiRewriteCN.json](https://github.com/PostMindLab/ToxiRewriteCN/blob/main/data/ToxiRewriteCN.json).
 Here we simply describe each fine-grain label.  
 | Label             | Description                                                  |
 | ----------------- | ------------------------------------------------------------ |
@@ -16,6 +16,30 @@ Here we simply describe each fine-grain label.
 | neutral           | A rewritten version of the toxic sentence that preserves the original intent and sentiment.  |
 | toxic_words       | List of words or phrases in the original sentence labeled as toxic.|
 | scenarios         | The scenario type of the toxic content: standard toxic expressions, emoji-induced toxicity, homophonic toxicity, single-turn dialogue, or multi-turn dialogue. |
+
+## Hugging Face Dataset Page
+
+This repository includes a Hugging Face dataset card in [hf_dataset/README.md](hf_dataset/README.md) and a GitHub Actions workflow in [.github/workflows/sync-huggingface-dataset.yml](.github/workflows/sync-huggingface-dataset.yml) to keep the Hub dataset synchronized with the `data/` directory.
+
+To enable the sync:
+
+1. Create a Hugging Face write token and add it to this GitHub repository as the secret `HF_TOKEN`.
+2. Optionally add the GitHub repository variable `HF_DATASET_REPO_ID`, for example `shanewang/ToxiRewriteCN`. If omitted, the workflow uses `shanewang/ToxiRewriteCN`.
+3. Run the **Sync Hugging Face Dataset** workflow manually once, or push changes to `data/`, `hf_dataset/`, `LICENSE`, or the upload script.
+
+You can also upload locally:
+
+```bash
+pip install huggingface_hub
+HF_TOKEN=hf_xxx HF_DATASET_REPO_ID=shanewang/ToxiRewriteCN python scripts/upload_to_huggingface.py
+```
+
+After publishing, users can load the default rewrite split with:
+
+```python
+from datasets import load_dataset
+dataset = load_dataset("shanewang/ToxiRewriteCN", "rewrites")
+```
 
 ## 💻 Quick start   
 ## Environment Setup  
@@ -28,7 +52,7 @@ conda activate toxirewritecn
 pip install -r requirements.txt
 ```
 ## Path Configuration
-The project supports automatic path adaptation: core dependency [utils/path_utils.py](https://github.com/magfox26/ToxiRewriteCN/blob/main/utils/path_utils.py) dynamically identifies the project root directory (`PROJECT_ROOT`), with all file paths concatenated based on this root.  
+The project supports automatic path adaptation: core dependency [utils/path_utils.py](https://github.com/PostMindLab/ToxiRewriteCN/blob/main/utils/path_utils.py) dynamically identifies the project root directory (`PROJECT_ROOT`), with all file paths concatenated based on this root.
 Customizable paths (e.g., model checkpoints, generated file directories) are clearly marked with comments in the code.
 ## 1. Toxicity & Sentiment Polarity Classifiers    
 The project leverages MS-Swift framework for the fine-tuning process.  
